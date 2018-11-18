@@ -1,5 +1,9 @@
 package com.kangjian.tmp;
 
+/**
+ * integer Max Value study
+ */
+
 public class Tmp2 {
     public static void main(String args[]){
         int a = Integer.MAX_VALUE;

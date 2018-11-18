@@ -1,5 +1,8 @@
 package com.kangjian.tmp;
 
+/**
+ *  ... function study
+ */
 public class Tmp3 {
 
     public static void main(String args []){
