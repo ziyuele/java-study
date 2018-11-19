@@ -12,7 +12,8 @@ public class Tmp2 {
         System.out.println(a);
         long b = a + 1;
         System.out.println(b);
-        long c = (long)a + 1;
+        long c = (long)a + 10;
+        System.out.println((int)c);
         System.out.println(c);
     }
 }
