@@ -1,6 +1,6 @@
 package com.kangjian.designpattern.IteratorModule;
 
-public class BookShelf {
+public class BookShelf implements Aggreate{
     private Book[] books;
     private int last = 0;
     public BookShelf(int maxSize) {
@@ -18,6 +18,8 @@ public class BookShelf {
     public int getLength(){
         return last;
     }
+
+    @Override
     public Iteratorr iteratorr(){
         return new BookShelfIteratorr(this);
     }

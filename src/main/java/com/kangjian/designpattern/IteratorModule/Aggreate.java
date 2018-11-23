@@ -2,5 +2,5 @@ package com.kangjian.designpattern.IteratorModule;
 
 
 public interface Aggreate {
-    public abstract Iteratorr iterator();
+    public abstract Iteratorr iteratorr();
 }
