@@ -1,5 +1,9 @@
 package com.kangjian.designpattern.IteratorModule;
 
+/**
+ * 具体的集合
+ */
+
 public class BookShelf implements Aggreate{
     private Book[] books;
     private int last = 0;

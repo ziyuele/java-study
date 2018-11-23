@@ -1,5 +1,9 @@
 package com.kangjian.designpattern.IteratorModule;
 
+/**
+ *  具体的迭代器
+ */
+
 public class BookShelfIteratorr implements Iteratorr {
 
     private BookShelf bookShelf;

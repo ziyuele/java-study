@@ -1,5 +1,8 @@
 package com.kangjian.designpattern.IteratorModule;
 
+/**
+ * 集合元素描述
+ */
 public class Book {
     private String name;
     public Book(String name) {
