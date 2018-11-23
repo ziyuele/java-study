@@ -1,0 +1,30 @@
+package com.kangjian.designpattern.IteratorModule;
+
+public class BookShelfIteratorr implements Iteratorr {
+
+    private BookShelf bookShelf;
+    private int index;
+
+    public BookShelfIteratorr(BookShelf bookShelf){
+        this.bookShelf = bookShelf;
+        this.index = 0;
+    }
+
+    @Override
+    public boolean hasNext() {
+        if (bookShelf.getLength() > index){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public Object next() {
+
+        Book book =  bookShelf.getBookAt(index);
+        index ++;
+        return book;
+
+    }
+}
