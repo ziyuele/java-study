@@ -1,32 +1,26 @@
 package com.kangjian.springbootstudy.demo;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 
 
-
-@Component
-@ConfigurationProperties(prefix = "ss", ignoreUnknownFields = false)
+@Configuration
 public class ReadConf {
-    private String host;
-    private int port;
 
-    public int getPort() {
-        return port;
-    }
+
+    @Value("${ss.host}")
+    private String host;
+    //@Value("${ss.port}")
+    //private int port;
 
     public String getHost() {
         return host;
 
     }
 
-    public void setPort(int port) {
-
-        this.port = port;
-    }
-
     public void setHost(String host) {
 
         this.host = host;
     }
+
 }
