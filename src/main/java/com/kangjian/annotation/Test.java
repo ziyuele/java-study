@@ -1,8 +1,14 @@
 package com.kangjian.annotation;
 
-@TestAnnotation
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+
 public class Test {
     public static void main(String args[]){
-        System.out.println("test");
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        Validator validator = factory.getValidator();
+        validator.validate()
+        new Test1().test(null);
     }
 }

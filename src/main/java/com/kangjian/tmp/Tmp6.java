@@ -9,5 +9,7 @@ public class Tmp6 {
         Integer y = x;
         x += 1;
         System.out.println(y + " " + x);
+        String test = "dfdf";
+        System.out.println(test.contains(" "));
     }
 }
