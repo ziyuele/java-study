@@ -23,6 +23,5 @@ public class SerializableTest {
                 new ObjectInputStream(new FileInputStream(file));
         SerializableBean serializableBean1 = (SerializableBean) objectInputStream.readObject();
         System.out.println(serializableBean1.toString());
-
     }
 }
