@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package test;
+
+option java_package = "com.kangjian.rpc";
+option java_outer_classname = "RPCDemo";
+
+message Person {
+    int32 id = 1;
+    string name = 2;
+    int32 aget = 3;
+    string mail = 4;
+}
+
+message Response {
+  Person person = 1;
+  int32 status = 2;
+}
+
+message IdRequest {
+    int32 id = 1;
+}
+
+service PersonService {
+
+    rpc createPerson(Person) returns (Response);
+    rpc getPerson(IdRequest) returns (Response);
+    rpc updatePerson(IdRequest) returns (Response);
+    rpc deletePerson(IdRequest) returns (Response);
+
+}

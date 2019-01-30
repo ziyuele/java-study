@@ -10,6 +10,8 @@
     <properties>
         <jdk.version>1.8</jdk.version>
         <project.encoding>UTF-8</project.encoding>
+        <protobuf.version>3.3.0</protobuf.version>
+        <grpc.version>1.7.0</grpc.version>
     </properties>
 
     <!-- for spring Boot -->
@@ -45,6 +47,26 @@
             <version>2.2.10</version>
         </dependency>
 
+        <!-- protobuf grpc support -->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty</artifactId>
+            <version>${grpc.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf</artifactId>
+            <version>${grpc.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-stub</artifactId>
+            <version>${grpc.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- sprintBoot Support-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -74,6 +96,17 @@
 
     <!-- build dependency while doing packege workers-->
     <build>
+
+        <!--A Maven extension/plugin that generates various useful platform-dependent
+         project properties normalized from ${os.name} and ${os.arch}.  -->
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.5.0.Final</version>
+            </extension>
+        </extensions>
+
         <plugins>
            <!--set maven compiler plugion for thrift compile-->
             <plugin>
@@ -100,6 +133,28 @@
                             <goal>copy-dependencies</goal>
                         </goals>
 
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- proto support -->
+
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <version>0.5.0</version>
+                <configuration>
+                    <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}
+                    </protocArtifact>
+                    <pluginId>grpc-java</pluginId>
+                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}
+                    </pluginArtifact>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>compile-custom</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
@@ -133,5 +188,18 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>aliyunmaven</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>

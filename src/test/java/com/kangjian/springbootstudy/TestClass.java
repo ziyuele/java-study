@@ -19,5 +19,6 @@ public class TestClass {
     @Test
     public void Test(){
         LOG.info("this is a test");
+        LOG.info(readConf.getHost());
     }
 }

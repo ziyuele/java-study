@@ -10,7 +10,7 @@ public class ReadConf {
 
     public ReadConf(){}
 
-    @Value("${ss.host}")
+    @Value("{ss.host}")
     private String host;
     //@Value("${ss.port}")
     //private int port;
