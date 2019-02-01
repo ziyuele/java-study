@@ -18,9 +18,9 @@ public class ServerClientProtoHandler extends PersonServiceGrpc.PersonServiceImp
        // super.createPerson(request, responseObserver);
         Person.Builder person = Person.newBuilder();
         person.setAget(1).setId(0).setName("kangjian").setMail("xxx@xx.com");
-        Response.Builder response = Response.newBuilder();
-        responseObserver.onCompleted();
+        Response.Builder response = Response.newBuilder().setPerson(person.build());
         responseObserver.onNext(response.build());
+        responseObserver.onCompleted();
     }
 
     @Override

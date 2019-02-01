@@ -22,7 +22,8 @@ public class GRPCServer {
         try {
             log.info("server start on port: {}", 8899);
            this.server = ServerBuilder.forPort(8899).addService(handler).build().start();
-        } catch (IOException e) {
+           this.server.awaitTermination();
+        } catch (IOException | InterruptedException e) {
             log.error(e.getMessage(), e);
             throw new RuntimeException(e.getMessage(), e);
         }
