@@ -1,7 +1,6 @@
 package com.kangjian.reflect;
 
 import java.lang.reflect.Method;
-import java.lang.reflect.Parameter;
 
 public class Main {
     public static void main(String args[]) {
