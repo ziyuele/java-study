@@ -1,4 +1,4 @@
-package com.kangjian.aop;
+package com.kangjian.aop.aopdemo1;
 
 public class Main {
 
@@ -6,6 +6,5 @@ public class Main {
 
         IHello hello = new HelloProxy(new Hello());
         hello.sayhello();
-
     }
 }
