@@ -1,6 +1,7 @@
 package com.kangjian.leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Solution977 {
 
@@ -17,15 +18,7 @@ public class Solution977 {
            A[x] = A[x] * A[x];
         }
 
-        for (int x = 0; x < A.length; x ++) {
-            for(int y = x; y < A.length; y++) {
-                if(A[x] > A[y]) {
-                    int tmp = A[x];
-                    A[x] = A[y];
-                    A[y] = tmp;
-                }
-            }
-        }
+        Arrays.sort(A);
         return A;
     }
 }
