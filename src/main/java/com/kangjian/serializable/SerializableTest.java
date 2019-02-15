@@ -4,10 +4,21 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.UUID;
+import java.util.regex.Pattern;
 
 public class SerializableTest {
 
     public static void main(String args[]) throws Exception{
+
+        String uuid = UUID.randomUUID().toString();
+        System.out.println(uuid);
+
+        UUID uuidl = UUID.randomUUID();
+        System.out.println(uuidl);
+        System.exit(0);
+
+
         String file = "SerializableData";
         SerializableBean serializableBean = new SerializableBean("kangjian", 13, "man");
         ObjectOutputStream objectOutputStream =
