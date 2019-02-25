@@ -12,6 +12,7 @@
         <project.encoding>UTF-8</project.encoding>
         <protobuf.version>3.3.0</protobuf.version>
         <grpc.version>1.7.0</grpc.version>
+        <zookeeper.version>3.4.10</zookeeper.version>
     </properties>
 
     <!-- for spring Boot -->
@@ -24,6 +25,11 @@
 
     <!-- dependices -->
     <dependencies>
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>${zookeeper.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
