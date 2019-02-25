@@ -1,4 +1,4 @@
-package com.kangjian.zookeeperstudy;
+package com.kangjian.zookeeperstudy.demo1;
 
 import java.util.Arrays;
 
