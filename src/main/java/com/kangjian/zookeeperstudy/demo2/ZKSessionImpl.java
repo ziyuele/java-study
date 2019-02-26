@@ -7,6 +7,7 @@ package com.kangjian.zookeeperstudy.demo2;
 import java.io.IOException;
 import java.util.List;
 
+
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.WatchedEvent;
@@ -24,6 +25,7 @@ public class ZKSessionImpl extends ZKSessionStore implements ZKSession, Watcher{
     private String hostPort;
     private int sessionTimeOut;
     private static final Object OBJECT_LOCK = new Object();
+    private static final String defaultCharSet = "UTF-8";
     // extend methods from ZKSessionStore
     @Override
     public ZooKeeper createClient(String hostPort, int sessionTimeOut) {
@@ -71,27 +73,100 @@ public class ZKSessionImpl extends ZKSessionStore implements ZKSession, Watcher{
 
     @Override
     public void create(String path, String data) {
-
+        try {
+            new ZooKeeperAction<Void>() {
+                @Override
+                Void run() throws KeeperException, InterruptedException {
+                    zooKeeper.create(path, data.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+                    return null;
+                }
+            }.action();
+        } catch (KeeperException e) {
+            log.warn(e.getMessage(), e);
+        } catch (Exception e) {
+            log.warn(e.getMessage(), e);
+        }
     }
 
     @Override
     public void delete(String path) {
+        try {
+            new ZooKeeperAction<Void>(){
+                @Override
+                Void run() throws KeeperException, InterruptedException {
+                    // don't use version use default -1
+                    zooKeeper.delete(path, -1);
+                    return null;
+                }
+            }.action();
+        } catch (KeeperException e) {
+           if (e.code() == KeeperException.Code.NONODE)  {
+               log.warn("node not exist");
+           }
+           log.error(e.getMessage(), e);
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
 
     }
 
     @Override
     public void update(String path, String data) {
-
+        try {
+            new ZooKeeperAction<Void>() {
+                @Override
+                Void run() throws KeeperException, InterruptedException {
+                    zooKeeper.setData(path, data.getBytes(), -1);
+                    return null;
+                }
+            }.action();
+        } catch (KeeperException e) {
+            log.error(e.getMessage(), e);
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+        }
     }
 
     @Override
     public String get(String path) {
-        return null;
+        try {
+            return new ZooKeeperAction<String>() {
+                @Override
+                String run() throws KeeperException, InterruptedException {
+                   byte[] res =  zooKeeper.getData(path, false, null);
+                   try {
+                       return new String(res, defaultCharSet);
+                   } catch (Exception e) {
+                       throw new RuntimeException(e.getMessage(), e);
+                   }
+                }
+            }.action();
+        } catch (KeeperException e) {
+            log.error(e.getMessage(), e);
+            throw new RuntimeException(e.getMessage(), e);
+        } catch (Exception e) {
+            log.error(e.getMessage(), e);
+            throw new RuntimeException(e.getMessage(), e);
+        }
     }
 
     @Override
     public List<String> child(String path) {
-        return null;
+       try {
+           return new ZooKeeperAction<List<String>>() {
+               @Override
+               List<String> run() throws KeeperException, InterruptedException {
+                   return zooKeeper.getChildren(path, false);
+               }
+           }.action();
+       } catch (KeeperException e) {
+           log.error(e.getMessage(), e);
+           throw new RuntimeException(e.getMessage(), e);
+       } catch (Exception e) {
+           log.error(e.getMessage(), e);
+           throw new RuntimeException(e.getMessage(), e);
+       }
+
     }
 
 
