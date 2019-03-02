@@ -1,7 +1,14 @@
-package com.kangjian.springbootstudy;
+/*
+ * Copyright (c) 2019. website www.ziyuele.com
+ */
+
+package com.kangjian.springbootstudy.demo;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.kangjian.springbootstudy.demo.Response;
+import com.kangjian.springbootstudy.demo.bean;
 
 @RestController
 public class TestController {

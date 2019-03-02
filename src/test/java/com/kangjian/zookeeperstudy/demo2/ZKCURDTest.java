@@ -79,6 +79,9 @@ public class ZKCURDTest {
        List<String> res = session.child(path);
        log.info(res.toString());
        Assert.assertEquals(list.toString(), res.toString());
+
+      session.delete(path + childPath1);
+      session.delete(path + childPath2);
     }
 
 }

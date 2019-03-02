@@ -1,4 +1,8 @@
-package com.kangjian.springbootstudy;
+/*
+ * Copyright (c) 2019. website www.ziyuele.com
+ */
+
+package com.kangjian.springbootstudy.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

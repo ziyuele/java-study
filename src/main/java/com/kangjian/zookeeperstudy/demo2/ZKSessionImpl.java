@@ -27,6 +27,10 @@ public class ZKSessionImpl extends ZKSessionStore implements ZKSession, Watcher{
     private static final Object OBJECT_LOCK = new Object();
     private static final String defaultCharSet = "UTF-8";
     // extend methods from ZKSessionStore
+    public ZKSessionImpl() {}
+    public  ZKSessionImpl(String hostPort,int sessionTimeOut) {
+        createClient(hostPort, sessionTimeOut);
+    }
     @Override
     public ZooKeeper createClient(String hostPort, int sessionTimeOut) {
         this.hostPort = hostPort;
