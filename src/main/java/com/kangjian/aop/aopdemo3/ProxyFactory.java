@@ -23,7 +23,9 @@ public class ProxyFactory {
                             PrintMsg printMsg = method.getAnnotation(PrintMsg.class);
                             System.out.println(printMsg.value());
                         }
-                        return method.invoke(printService, args);
+                        Object o = method.invoke(printService, args);
+                        System.out.println("method used");
+                        return o;
                     }
                 });
     }
