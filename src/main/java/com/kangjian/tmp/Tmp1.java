@@ -16,6 +16,8 @@ public class Tmp1 {
           System.out.println("sdfdf");
       }
 
+      Tmp1 tmp1 = new Tmp1();
+      System.out.println(tmp1.getClass().getName().contains("com.kangjian"));
 
     }
 }
