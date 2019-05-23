@@ -1,4 +1,4 @@
-mvn clean package 
+mvn clean package -DskipTests
 
 rm -rf output
 mkdir -p output 
