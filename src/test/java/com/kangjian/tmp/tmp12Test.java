@@ -8,9 +8,10 @@ import java.io.OutputStream;
 import java.math.BigInteger;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
+import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
@@ -20,13 +21,15 @@ import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.junit.Test;
 
-import com.kangjian.zookeeperstudy.demo1.Executor;
+
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class tmp12Test {
 
+
+    public static int x = 0;
 
     @Test
     public void test1() {
@@ -230,4 +233,28 @@ public class tmp12Test {
         return connectNum;
     }
 
+
+    @Test
+    public void volatileTest() throws Exception {
+        List<Thread> list = new ArrayList<>();
+        for (int x = 0; x < 20480; x++) {
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(new Random().nextInt(10));
+                        tmp12Test.x = tmp12Test.x + 1;
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            list.add(t);
+        }
+        for (Thread thread : list) {
+            thread.start();
+            thread.join();
+        }
+      System.out.println(x);
+    }
 }
