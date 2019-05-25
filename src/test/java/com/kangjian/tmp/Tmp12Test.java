@@ -3,6 +3,7 @@
  */
 
 package com.kangjian.tmp;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.math.BigInteger;
@@ -21,13 +22,10 @@ import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.junit.Test;
 
-
-
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class tmp12Test {
-
+public class Tmp12Test {
 
     public static int x = 0;
 
@@ -50,29 +48,28 @@ public class tmp12Test {
         System.out.println(res);
     }
 
-
     @Test
     public void testString() {
         String tmp = ",";
         System.out.println(tmp.split(",").length);
-        List<String> baasRoleList =  Arrays.asList(tmp.trim().split(","));
-        System.out.println(baasRoleList.size()); System.out.println(baasRoleList.contains(""));
+        List<String> baasRoleList = Arrays.asList(tmp.trim().split(","));
+        System.out.println(baasRoleList.size());
+        System.out.println(baasRoleList.contains(""));
     }
-
 
     @Test
     public void testIsEmpty() {
-       String s = "";
-       String ss = null;
-       System.out.println(s.isEmpty());
+        String s = "";
+        String ss = null;
+        System.out.println(s.isEmpty());
     }
 
     @Test
     public void switchTest() {
-       int x = 0;
-       for (; x< 10; x++) {
-           System.out.println("round:" + x);
-       }
+        int x = 0;
+        for (; x < 10; x++) {
+            System.out.println("round:" + x);
+        }
     }
 
     @Test
@@ -87,36 +84,17 @@ public class tmp12Test {
         System.out.println(acturl - current);
     }
 
-
     @Test
-    public void buildCruatorConnections() throws  Exception{
+    public void buildCruatorConnections() throws Exception {
         String ipList = "";
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
         CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient(ipList, retryPolicy);
         curatorFramework.start();
-        
-    }
 
-
-    @Test
-    public void buildCruatorConnections1() throws  Exception{
-        String ipList = "";
-        RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
-        CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient(ipList, retryPolicy);
-        CuratorFramework curatorFramework1 = CuratorFrameworkFactory.newClient(ipList, retryPolicy);
-        CuratorFramework curatorFramework2 = CuratorFrameworkFactory.newClient(ipList, retryPolicy);
-        CuratorFramework curatorFramework3 = CuratorFrameworkFactory.newClient(ipList, retryPolicy);
-        CuratorFramework curatorFramework4 = CuratorFrameworkFactory.newClient(ipList, retryPolicy);
-        curatorFramework.start();
-        curatorFramework1.start();
-        curatorFramework2.start();
-        curatorFramework3.start();
-        curatorFramework4.start();
-        Thread.sleep(300000);
     }
 
     @Test
-    public void buildCruatorConnections2() throws  Exception{
+    public void buildCruatorConnections1() throws Exception {
         String ipList = "";
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
         CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient(ipList, retryPolicy);
@@ -133,7 +111,7 @@ public class tmp12Test {
     }
 
     @Test
-    public void buildCruatorConnections3() throws  Exception{
+    public void buildCruatorConnections2() throws Exception {
         String ipList = "";
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
         CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient(ipList, retryPolicy);
@@ -150,7 +128,24 @@ public class tmp12Test {
     }
 
     @Test
-    public void  soeckeTest() throws Exception {
+    public void buildCruatorConnections3() throws Exception {
+        String ipList = "";
+        RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
+        CuratorFramework curatorFramework = CuratorFrameworkFactory.newClient(ipList, retryPolicy);
+        CuratorFramework curatorFramework1 = CuratorFrameworkFactory.newClient(ipList, retryPolicy);
+        CuratorFramework curatorFramework2 = CuratorFrameworkFactory.newClient(ipList, retryPolicy);
+        CuratorFramework curatorFramework3 = CuratorFrameworkFactory.newClient(ipList, retryPolicy);
+        CuratorFramework curatorFramework4 = CuratorFrameworkFactory.newClient(ipList, retryPolicy);
+        curatorFramework.start();
+        curatorFramework1.start();
+        curatorFramework2.start();
+        curatorFramework3.start();
+        curatorFramework4.start();
+        Thread.sleep(300000);
+    }
+
+    @Test
+    public void soeckeTest() throws Exception {
         Socket socket = new Socket("", 8181);
         OutputStream outputStream = socket.getOutputStream();
         outputStream.write("srvr".getBytes("UTF-8"));
@@ -160,9 +155,9 @@ public class tmp12Test {
         int len;
         StringBuilder sb = new StringBuilder();
         while ((len = in.read(bytes)) != -1) {
-            sb.append(new String(bytes, 0, len,"UTF-8"));
+            sb.append(new String(bytes, 0, len, "UTF-8"));
         }
-        String [] res = sb.toString().split("\n");
+        String[] res = sb.toString().split("\n");
         System.out.println(res.length);
         for (String re : res) {
             System.out.println("== " + re);
@@ -173,10 +168,10 @@ public class tmp12Test {
     }
 
     @Test
-    public void threadPoolTest() throws  Exception{
+    public void threadPoolTest() throws Exception {
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newCachedThreadPool();
         executor.setCorePoolSize(2000);
-        for (int x  = 0; x< executor.getCorePoolSize(); x++ ){
+        for (int x = 0; x < executor.getCorePoolSize(); x++) {
             executor.execute(new Runnable() {
                 @Override
                 public void run() {
@@ -196,7 +191,7 @@ public class tmp12Test {
         System.out.println(res);
     }
 
-    private int getconnections(InetSocketAddress inetSocketAddress)  {
+    private int getconnections(InetSocketAddress inetSocketAddress) {
         Socket socket = null;
         int connectNum = Integer.MAX_VALUE;
         try {
@@ -209,9 +204,9 @@ public class tmp12Test {
             int len;
             StringBuilder sb = new StringBuilder();
             while ((len = in.read(bytes)) != -1) {
-                sb.append(new String(bytes, 0, len,"UTF-8"));
+                sb.append(new String(bytes, 0, len, "UTF-8"));
             }
-            String [] res = sb.toString().split("\n");
+            String[] res = sb.toString().split("\n");
             for (String re : res) {
                 if (re.trim().contains("zk_client_connections") || re.trim().contains("Connections")) {
                     connectNum = Integer.parseInt(re.split(":")[1].trim());
@@ -226,13 +221,12 @@ public class tmp12Test {
                 try {
                     socket.close();
                 } catch (Exception e1) {
-                   e.printStackTrace();
+                    e.printStackTrace();
                 }
             }
         }
         return connectNum;
     }
-
 
     @Test
     public void volatileTest() throws Exception {
@@ -243,7 +237,7 @@ public class tmp12Test {
                 public void run() {
                     try {
                         Thread.sleep(new Random().nextInt(10));
-                        tmp12Test.x = tmp12Test.x + 1;
+                        Tmp12Test.x = Tmp12Test.x + 1;
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -255,6 +249,6 @@ public class tmp12Test {
             thread.start();
             thread.join();
         }
-      System.out.println(x);
+        System.out.println(x);
     }
 }
