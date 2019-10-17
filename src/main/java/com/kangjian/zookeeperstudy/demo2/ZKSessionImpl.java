@@ -15,6 +15,7 @@ import org.apache.zookeeper.Watcher;
 import org.apache.zookeeper.ZooDefs;
 import org.apache.zookeeper.ZooKeeper;
 
+import io.netty.util.internal.StringUtil;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -60,7 +61,7 @@ public class ZKSessionImpl extends ZKSessionStore implements ZKSession, Watcher{
                 Void run() throws KeeperException, InterruptedException {
                     // dataPath, data, auth createMode
                     // throws KeeperException InterruptException
-                    zooKeeper.create(path, null, ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+                    zooKeeper.create(path, null, ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
                     return null;
                 }
             }.action();
@@ -91,6 +92,7 @@ public class ZKSessionImpl extends ZKSessionStore implements ZKSession, Watcher{
             log.warn(e.getMessage(), e);
         }
     }
+
 
     @Override
     public void delete(String path) {
@@ -202,6 +204,7 @@ public class ZKSessionImpl extends ZKSessionStore implements ZKSession, Watcher{
        abstract T run() throws KeeperException, InterruptedException;
 
        public T action() throws Exception{
+           StringUtil.isNullOrEmpty("dd");
            return run();
        }
     }

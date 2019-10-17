@@ -25,9 +25,11 @@ public class ZKCURDTest {
     }
 
     @Test
-    public void testCreate() {
-        String path = "/test";
+    public void testCreate() throws Exception{
+        String path = "/kj/lock_test/lock-";
         session.create(path);
+        session.create(path);
+        Thread.sleep(3000000);
     }
 
 
@@ -56,7 +58,6 @@ public class ZKCURDTest {
 
     @Test
     public void testDelete() {
-        testCreate();
         String path = "/test";
         session.delete(path);
     }

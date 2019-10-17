@@ -11,7 +11,9 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -21,6 +23,7 @@ import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.junit.Test;
+import org.springframework.transaction.annotation.Transactional;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -250,5 +253,25 @@ public class Tmp12Test {
             thread.join();
         }
         System.out.println(x);
+    }
+
+
+    @Test
+    public void testMaxValue() {
+        System.out.println(Integer.MAX_VALUE + 1);
+        System.out.println(Integer.MAX_VALUE + 2);
+    }
+
+    @Test
+    public void makingOOM(){
+        int x = 1;
+        while(true) {
+            int arr[] = new int[1024* 1024 * 1024];
+        }
+    }
+
+    @Test
+    public void makingFullGC() {
+
     }
 }
