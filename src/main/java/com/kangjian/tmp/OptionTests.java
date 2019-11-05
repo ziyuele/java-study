@@ -19,6 +19,4 @@ public class OptionTests {
         System.out.println(list.toString());
     }
 
-
-
 }
