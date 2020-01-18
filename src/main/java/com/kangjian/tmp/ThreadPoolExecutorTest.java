@@ -4,7 +4,6 @@
 
 package com.kangjian.tmp;
 
-import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -17,7 +16,7 @@ public class ThreadPoolExecutorTest {
                 3, TimeUnit.SECONDS, new LinkedBlockingDeque<>(), new ThreadFactory() {
             @Override
             public Thread newThread(Runnable r) {
-                return null;
+                return new Thread(r);
             }
         });
     }
