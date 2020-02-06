@@ -1,6 +1,6 @@
 ## zookeeper study from ![zookeeper web](http://zookeeper.apache.org/doc/current/javaExample.html)
 
-* Executor class (com.kangjian.zookeeperstudy.Main)
+* Executor class (com.kangjian.zookeeperstudy.test.Main)
 
   used to build connection with zookeeper
   
