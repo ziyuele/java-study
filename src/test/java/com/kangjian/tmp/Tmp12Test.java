@@ -11,9 +11,7 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -23,7 +21,6 @@ import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.junit.Test;
-import org.springframework.transaction.annotation.Transactional;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -31,6 +28,13 @@ import lombok.extern.slf4j.Slf4j;
 public class Tmp12Test {
 
     public static int x = 0;
+
+    @Test
+    public void testList() {
+        List<String> list = new ArrayList<>();
+        int ret = list.indexOf("dddd");
+        System.out.println(ret);
+    }
 
     @Test
     public void test1() {
@@ -157,7 +161,7 @@ public class Tmp12Test {
         byte[] bytes = new byte[1024];
         int len;
         StringBuilder sb = new StringBuilder();
-        while ((len = in.read(bytes)) != -1) {
+        while ( (len = in.read(bytes)) != -1 ) {
             sb.append(new String(bytes, 0, len, "UTF-8"));
         }
         String[] res = sb.toString().split("\n");
@@ -178,7 +182,7 @@ public class Tmp12Test {
             executor.execute(new Runnable() {
                 @Override
                 public void run() {
-                    while (true) {
+                    while ( true ) {
                         getConnectionsTest();
                     }
                 }
@@ -206,7 +210,7 @@ public class Tmp12Test {
             byte[] bytes = new byte[1024];
             int len;
             StringBuilder sb = new StringBuilder();
-            while ((len = in.read(bytes)) != -1) {
+            while ( (len = in.read(bytes)) != -1 ) {
                 sb.append(new String(bytes, 0, len, "UTF-8"));
             }
             String[] res = sb.toString().split("\n");
@@ -255,7 +259,6 @@ public class Tmp12Test {
         System.out.println(x);
     }
 
-
     @Test
     public void testMaxValue() {
         System.out.println(Integer.MAX_VALUE + 1);
@@ -263,10 +266,10 @@ public class Tmp12Test {
     }
 
     @Test
-    public void makingOOM(){
+    public void makingOOM() {
         int x = 1;
-        while(true) {
-            int arr[] = new int[1024* 1024 * 1024];
+        while ( true ) {
+            int arr[] = new int[1024 * 1024 * 1024];
         }
     }
 
