@@ -43,4 +43,12 @@ public class Configure {
         return properties.getProperty("study.mq.zk.path", "/tet/");
     }
 
+    public String getSyncTopic() {
+        return properties.getProperty("study.mq.sync.topic", "syncTopic");
+    }
+
+    public String getMQGroup() {
+        return properties.getProperty("study.mq.group", "testGroup");
+    }
+
 }
