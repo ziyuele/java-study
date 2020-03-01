@@ -22,6 +22,9 @@ public class ValidBST {
         solution(treeNode, Integer.MAX_VALUE, Integer.MIN_VALUE);
     }
 
+    // 1. 设定上下边界
+    // 2. 中序遍历
+    // 二叉搜索树定义: 左边的所有节点永远比右边的小
     public static boolean solution(TreeNode node, Integer max, Integer min) {
         if (node != null) {
             if(!solution(node.left, node.val, min)) {
