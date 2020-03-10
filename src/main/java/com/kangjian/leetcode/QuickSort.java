@@ -4,6 +4,8 @@
 
 package com.kangjian.leetcode;
 
+import java.util.Arrays;
+
 public class QuickSort {
     public int arr[] = {1,3,43,1,3,45,1,4,23};
 
@@ -45,6 +47,7 @@ public class QuickSort {
         for (int x = 0; x < quickSort.arr.length; x ++)  {
             System.out.print(quickSort.arr[x] + " ");
         }
+        System.out.println(Arrays.asList(quickSort));
     }
 
 }
