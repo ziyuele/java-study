@@ -15,6 +15,14 @@ public class IntegerTest {
         Integer d = 1999;
 
         System.out.println(c == d);
+        Integer e = Integer.valueOf(1);
+        Integer f = Integer.valueOf(1);
+        System.out.println(e.hashCode());
+        System.out.println(f.hashCode());
+        System.out.println(e == f);
 
+        long x  = -1L;
+        System.out.println("==============");
+        System.out.println(x == -1);
     }
 }
