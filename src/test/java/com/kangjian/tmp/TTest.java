@@ -4,6 +4,8 @@
 
 package com.kangjian.tmp;
 
+import org.junit.Test;
+
 public class TTest {
 
     private DataSourceType type;
@@ -38,6 +40,7 @@ public class TTest {
             return prefix;
         }
      }
+
 
 
 }
