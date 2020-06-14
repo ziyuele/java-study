@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties>
+        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="mysqlurl" value="jdbc:mysql://localhost:3306/test"/>
+        <property name="username" value="root"/>
+    </properties>
+    <!--settings>
+        <setting name="hhh" value="hh"/>
+    </settings-->
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${mysqlurl}"/>
+                <property name="username" value="${username}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mappers/test_table_mapper.xml"/>
+    </mappers>
+</configuration>

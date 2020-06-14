@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ziyue.mybaits.dao.TestMapper">
+    <insert id="insert" parameterType="com.ziyue.mybaits.entity.TestEntity" >
+        
+    </insert>
+    <select id="getAllTest" resultType="com.ziyue.mybaits.entity.TestEntity">
+    select * from test_table
+    </select>
+</mapper>

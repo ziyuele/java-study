@@ -1,6 +1,8 @@
-.idea
 target
 output
 SerializableData
 Greeting.html
+.DS_store
 logs
+package-lock.json
+node_modules
