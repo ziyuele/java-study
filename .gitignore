@@ -6,3 +6,4 @@ Greeting.html
 logs
 package-lock.json
 node_modules
+*.iml
