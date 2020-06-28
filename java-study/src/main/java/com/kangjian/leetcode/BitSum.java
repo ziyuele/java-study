@@ -4,7 +4,6 @@
 
 package com.kangjian.leetcode;
 
-import javax.persistence.criteria.CriteriaBuilder;
 
 /**
  *  二进制求和 67

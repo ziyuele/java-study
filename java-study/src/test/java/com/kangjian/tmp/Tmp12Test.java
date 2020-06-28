@@ -20,10 +20,12 @@ import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import lombok.extern.slf4j.Slf4j;
 
+@Ignore
 @Slf4j
 public class Tmp12Test {
 

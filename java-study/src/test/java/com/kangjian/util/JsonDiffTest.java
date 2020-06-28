@@ -26,4 +26,16 @@ public class JsonDiffTest {
         System.out.println(ans);
     }
 
+    @Test
+    public void testInteger() {
+        Integer a = 1;
+        Integer b = 1;
+
+        System.out.println("a == b ? :"  + (a == b));
+
+        Integer c = 128;
+        Integer d = 128;
+        System.out.println("c == d ? :"  + (c == d));
+    }
+
 }

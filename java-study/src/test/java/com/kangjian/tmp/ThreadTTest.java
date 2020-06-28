@@ -7,6 +7,7 @@ package com.kangjian.tmp;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import lombok.ToString;
@@ -24,8 +25,9 @@ public class ThreadTTest {
     }
 
     @Test
+    @Ignore
     public void testContainsKey() throws Exception{
-        for (int a = 0; a < 10000; a++) {
+        for (int a = 0; a < 10; a++) {
             map.put(a, "test");
         }
 
@@ -33,11 +35,11 @@ public class ThreadTTest {
             @Override
             public void run() {
                 while (true) {
-                    for (int b = 0; b < 10000; b++) {
+                    for (int b = 0; b < 10; b++) {
                         log.info(map.containsKey(b) + "");
                         map.remove(b);
                     }
-
+                    return;
                 }
             }
         });
