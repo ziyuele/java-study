@@ -23,6 +23,7 @@
     <modules>
         <module>java-study</module>
         <module>mybaits-std</module>
+        <module>spi-std</module>
     </modules>
 
     <build>
