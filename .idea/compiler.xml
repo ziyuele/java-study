@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="spi-std" />
         <module name="java-study" />
+        <module name="springboot-std" />
         <module name="mybaits-std" />
       </profile>
     </annotationProcessing>
@@ -15,6 +16,7 @@
       <module name="java-study" target="1.8" />
       <module name="mybaits-std" target="1.8" />
       <module name="spi-std" target="1.8" />
+      <module name="springboot-std" target="1.8" />
       <module name="study" target="1.8" />
     </bytecodeTargetLevel>
   </component>

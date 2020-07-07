@@ -1,5 +1,6 @@
 package com.kangjian.tmptestmt;
 
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
@@ -14,6 +15,12 @@ import java.util.stream.Collectors;
 
 @Slf4j
 public class Test202007 {
+
+    static class Base { }
+
+    static class BaseExtends extends  Base { }
+
+    static class  BaseExtendsOne extends Base {}
 
     @Test
     public void testDate() {
@@ -85,5 +92,15 @@ public class Test202007 {
     public void testUUID() {
         String uid = UUID.randomUUID().toString();
         log.info("uid is: {}", uid);
+    }
+
+    @Test
+    public void testInstance() {
+        Base base = new BaseExtendsOne();
+        if (base instanceof BaseExtends) {
+            log.info("BaseExtends lucked");
+        } else if (base instanceof BaseExtendsOne) {
+            log.info("BaseExtendOne lucked");
+        }
     }
 }

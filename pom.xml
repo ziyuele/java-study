@@ -24,6 +24,7 @@
         <module>java-study</module>
         <module>mybaits-std</module>
         <module>spi-std</module>
+        <module>springboot-std</module>
     </modules>
 
     <build>
