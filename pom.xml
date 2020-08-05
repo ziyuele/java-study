@@ -25,6 +25,7 @@
         <module>mybaits-std</module>
         <module>spi-std</module>
         <module>springboot-std</module>
+        <module>niuke-std</module>
     </modules>
 
     <build>
