@@ -1,0 +1,159 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Detecting the operating system and CPU architecture
+[INFO] ------------------------------------------------------------------------
+[INFO] os.detected.name: osx
+[INFO] os.detected.arch: x86_64
+[INFO] os.detected.version: 10.15
+[INFO] os.detected.version.major: 10
+[INFO] os.detected.version.minor: 15
+[INFO] os.detected.classifier: osx-x86_64
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] study                                                              [pom]
+[INFO] java-study                                                         [jar]
+[INFO] mybaits-std                                                        [jar]
+[INFO] spi-std                                                            [jar]
+[INFO] springboot-std                                                     [jar]
+[INFO] niuke-std                                                          [jar]
+[INFO] 
+[INFO] --------------------------< org.ziyue:study >---------------------------
+[INFO] Building study 1.0-SNAPSHOT                                        [1/6]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ study ---
+[INFO] org.ziyue:study:pom:1.0-SNAPSHOT
+[INFO] 
+[INFO] ----------------------< com.kangjian:java-study >-----------------------
+[INFO] Building java-study 1.0-SNAPSHOT                                   [2/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.10:tree (default-cli) @ java-study ---
+[INFO] com.kangjian:java-study:jar:1.0-SNAPSHOT
+[INFO] +- org.apache.curator:curator-framework:jar:2.7.1:compile
+[INFO] |  \- org.apache.curator:curator-client:jar:2.7.1:compile
+[INFO] +- org.apache.curator:curator-recipes:jar:2.7.1:compile
+[INFO] +- redis.clients:jedis:jar:2.9.0:compile
+[INFO] |  \- org.apache.commons:commons-pool2:jar:2.4.2:compile
+[INFO] +- org.apache.zookeeper:zookeeper:jar:3.4.10:compile
+[INFO] |  +- org.slf4j:slf4j-api:jar:1.7.21:compile
+[INFO] |  +- org.slf4j:slf4j-log4j12:jar:1.7.21:compile
+[INFO] |  +- log4j:log4j:jar:1.2.17:compile
+[INFO] |  +- jline:jline:jar:0.9.94:compile
+[INFO] |  \- io.netty:netty:jar:3.10.5.Final:compile
+[INFO] +- mysql:mysql-connector-java:jar:5.1.46:compile
+[INFO] +- org.projectlombok:lombok:jar:1.16.18:compile
+[INFO] +- org.apache.thrift:libthrift:jar:0.12.0:compile
+[INFO] |  +- org.apache.httpcomponents:httpclient:jar:4.5.2:compile
+[INFO] |  |  \- commons-codec:commons-codec:jar:1.9:compile
+[INFO] |  \- org.apache.httpcomponents:httpcore:jar:4.4.5:compile
+[INFO] +- junit:junit:jar:4.12:compile
+[INFO] |  \- org.hamcrest:hamcrest-core:jar:1.3:compile
+[INFO] +- com.github.java-json-tools:json-schema-validator:jar:2.2.10:compile
+[INFO] |  +- com.github.java-json-tools:json-schema-core:jar:1.2.10:compile
+[INFO] |  |  +- com.github.java-json-tools:jackson-coreutils:jar:1.9:compile
+[INFO] |  |  |  +- com.fasterxml.jackson.core:jackson-databind:jar:2.6.7:compile
+[INFO] |  |  |  |  +- com.fasterxml.jackson.core:jackson-annotations:jar:2.6.7:compile
+[INFO] |  |  |  |  \- com.fasterxml.jackson.core:jackson-core:jar:2.6.7:compile
+[INFO] |  |  |  \- com.github.fge:msg-simple:jar:1.1:compile
+[INFO] |  |  |     \- com.github.fge:btf:jar:1.2:compile
+[INFO] |  |  +- com.github.fge:uri-template:jar:0.9:compile
+[INFO] |  |  \- org.mozilla:rhino:jar:1.7.7.1:compile
+[INFO] |  +- javax.mail:mailapi:jar:1.4.3:compile
+[INFO] |  |  \- javax.activation:activation:jar:1.1:compile
+[INFO] |  +- joda-time:joda-time:jar:2.8.2:compile
+[INFO] |  +- com.googlecode.libphonenumber:libphonenumber:jar:8.0.0:compile
+[INFO] |  +- com.google.code.findbugs:jsr305:jar:3.0.1:compile
+[INFO] |  \- net.sf.jopt-simple:jopt-simple:jar:5.0.3:compile
+[INFO] +- io.grpc:grpc-netty:jar:1.7.0:compile
+[INFO] |  \- io.netty:netty-handler-proxy:jar:4.1.16.Final:compile
+[INFO] |     +- io.netty:netty-transport:jar:4.1.16.Final:compile
+[INFO] |     |  +- io.netty:netty-buffer:jar:4.1.16.Final:compile
+[INFO] |     |  |  \- io.netty:netty-common:jar:4.1.16.Final:compile
+[INFO] |     |  \- io.netty:netty-resolver:jar:4.1.16.Final:compile
+[INFO] |     +- io.netty:netty-codec-socks:jar:4.1.16.Final:compile
+[INFO] |     |  \- io.netty:netty-codec:jar:4.1.16.Final:compile
+[INFO] |     \- io.netty:netty-codec-http:jar:4.1.16.Final:compile
+[INFO] +- io.grpc:grpc-protobuf:jar:1.7.0:compile
+[INFO] |  +- io.grpc:grpc-core:jar:1.7.0:compile
+[INFO] |  |  +- io.grpc:grpc-context:jar:1.7.0:compile
+[INFO] |  |  +- com.google.errorprone:error_prone_annotations:jar:2.0.19:compile
+[INFO] |  |  +- com.google.instrumentation:instrumentation-api:jar:0.4.3:compile
+[INFO] |  |  \- io.opencensus:opencensus-api:jar:0.6.0:compile
+[INFO] |  +- com.google.protobuf:protobuf-java:jar:3.4.0:compile
+[INFO] |  +- com.google.protobuf:protobuf-java-util:jar:3.4.0:compile
+[INFO] |  |  \- com.google.code.gson:gson:jar:2.3.1:compile
+[INFO] |  +- com.google.api.grpc:proto-google-common-protos:jar:0.1.9:compile
+[INFO] |  \- io.grpc:grpc-protobuf-lite:jar:1.7.0:compile
+[INFO] +- io.grpc:grpc-stub:jar:1.7.0:compile
+[INFO] +- com.google.guava:guava:jar:14.0.1:compile
+[INFO] +- org.apache.rocketmq:rocketmq-client:jar:4.3.0:compile
+[INFO] |  +- org.apache.rocketmq:rocketmq-common:jar:4.3.0:compile
+[INFO] |  |  \- org.apache.rocketmq:rocketmq-remoting:jar:4.3.0:compile
+[INFO] |  |     +- com.alibaba:fastjson:jar:1.2.29:compile
+[INFO] |  |     +- io.netty:netty-all:jar:4.0.42.Final:compile
+[INFO] |  |     +- org.apache.rocketmq:rocketmq-logging:jar:4.3.0:compile
+[INFO] |  |     \- io.netty:netty-tcnative-boringssl-static:jar:1.1.33.Fork26:compile
+[INFO] |  \- org.apache.commons:commons-lang3:jar:3.4:compile
+[INFO] \- com.googlecode.protobuf-java-format:protobuf-java-format:jar:1.2:compile
+[INFO] 
+[INFO] -----------------------< org.ziyue:mybaits-std >------------------------
+[INFO] Building mybaits-std 1.0-SNAPSHOT                                  [3/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ mybaits-std ---
+[INFO] org.ziyue:mybaits-std:jar:1.0-SNAPSHOT
+[INFO] +- log4j:log4j:jar:1.2.17:compile
+[INFO] +- org.projectlombok:lombok:jar:1.18.12:provided
+[INFO] +- junit:junit:jar:4.12:test
+[INFO] |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] +- mysql:mysql-connector-java:jar:5.1.46:compile
+[INFO] \- org.mybatis:mybatis:jar:3.5.5:compile
+[INFO] 
+[INFO] -------------------------< org.ziyue:spi-std >--------------------------
+[INFO] Building spi-std 1.0-SNAPSHOT                                      [4/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ spi-std ---
+[INFO] org.ziyue:spi-std:jar:1.0-SNAPSHOT
+[INFO] 
+[INFO] ----------------------< org.ziyue:springboot-std >----------------------
+[INFO] Building springboot-std 1.0-SNAPSHOT                               [5/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ springboot-std ---
+[INFO] org.ziyue:springboot-std:jar:1.0-SNAPSHOT
+[INFO] \- org.springframework.boot:spring-boot-starter:jar:2.3.1.RELEASE:compile
+[INFO]    +- org.springframework.boot:spring-boot:jar:2.3.1.RELEASE:compile
+[INFO]    |  \- org.springframework:spring-context:jar:5.2.7.RELEASE:compile
+[INFO]    |     +- org.springframework:spring-aop:jar:5.2.7.RELEASE:compile
+[INFO]    |     +- org.springframework:spring-beans:jar:5.2.7.RELEASE:compile
+[INFO]    |     \- org.springframework:spring-expression:jar:5.2.7.RELEASE:compile
+[INFO]    +- org.springframework.boot:spring-boot-autoconfigure:jar:2.3.1.RELEASE:compile
+[INFO]    +- jakarta.annotation:jakarta.annotation-api:jar:1.3.5:compile
+[INFO]    +- org.springframework:spring-core:jar:5.2.7.RELEASE:compile
+[INFO]    |  \- org.springframework:spring-jcl:jar:5.2.7.RELEASE:compile
+[INFO]    \- org.yaml:snakeyaml:jar:1.26:compile
+[INFO] 
+[INFO] ------------------------< org.ziyue:niuke-std >-------------------------
+[INFO] Building niuke-std 1.0-SNAPSHOT                                    [6/6]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ niuke-std ---
+[INFO] org.ziyue:niuke-std:jar:1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for study 1.0-SNAPSHOT:
+[INFO] 
+[INFO] study .............................................. SUCCESS [  0.431 s]
+[INFO] java-study ......................................... SUCCESS [  0.468 s]
+[INFO] mybaits-std ........................................ SUCCESS [  0.017 s]
+[INFO] spi-std ............................................ SUCCESS [  0.003 s]
+[INFO] springboot-std ..................................... SUCCESS [  0.034 s]
+[INFO] niuke-std .......................................... SUCCESS [  0.003 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.221 s
+[INFO] Finished at: 2020-08-06T12:09:52+08:00
+[INFO] ------------------------------------------------------------------------
