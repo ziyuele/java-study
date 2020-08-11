@@ -11,7 +11,7 @@ import java.util.Scanner;
  *           选用TreeMap
  */
 
-public class HJ8 {
+public class HJ008 {
     public static void main(String args[]) {
         Scanner               scanner = new Scanner(System.in);
         int                   linNum  = Integer.parseInt(scanner.nextLine());

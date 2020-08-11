@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  *  4.  需要注意处理别界场景
  */
-public class HJ6 {
+public class HJ006 {
 
     public static void main(String args[]){
         solution(new Scanner(System.in).nextLong());

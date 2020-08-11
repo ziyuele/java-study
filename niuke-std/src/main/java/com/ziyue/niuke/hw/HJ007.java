@@ -8,7 +8,7 @@ package com.ziyue.niuke.hw;
 
 import java.util.Scanner;
 
-public class HJ7 {
+public class HJ007 {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         float f = scanner.nextFloat();

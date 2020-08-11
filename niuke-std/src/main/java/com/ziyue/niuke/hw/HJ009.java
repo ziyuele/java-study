@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  *  时间复杂度： O(n), 空间复杂度 O(10)
  */
-public class HJ9 {
+public class HJ009 {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNextLine()) {

@@ -6,7 +6,7 @@ import java.util.Scanner;
  * 原题处处： https://www.nowcoder.com/practice/d9162298cb5a437aad722fccccaae8a7?tpId=37&&tqId=21227&rp=1&ru=/ta/huawei/&qru=/ta/huawei/question-ranking
  * 时间复杂度： O(n) ， 空间复杂度 O（1）
  */
-public class HJ4 {
+public class HJ004 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int     num     = 2;

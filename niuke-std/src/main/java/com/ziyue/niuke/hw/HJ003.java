@@ -10,7 +10,7 @@ import java.util.TreeSet;
  * 思路： 1. 使用set 容器， 时间复杂度 On(logn) + O（n + m）空间复杂度: o(n)
  * 思路： 2. 先排序【可以使用快排】 O(logn) + O(n) 空间复杂度 o(logn)
  */
-public class HJ3 {
+public class HJ003 {
     public static void main(String [] args) {
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNext()) {
