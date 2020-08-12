@@ -3,9 +3,12 @@ package com.kangjian.tmptestmt;
 import com.google.errorprone.annotations.SuppressPackageLocation;
 import com.kangjian.util.TestObject;
 import lombok.extern.slf4j.Slf4j;
+import org.joda.time.DateTime;
 import org.junit.Test;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -26,5 +29,17 @@ public class Test202008 {
         log.info(testObjectList.toString());
         testObjectList.sort((r1, r2) -> (r1.getAge() - r2.getAge()));
         log.info(testObjectList.toString());
+        Map<String, Integer> ret = testObjectList.stream().collect(Collectors.toMap(testObject -> (testObject.getName()),
+                testObject -> (testObject.getAge()),
+                (t1, t2) -> {
+                   return t1 + t2;
+                }));
+        log.info(ret.toString());
+    }
+
+
+    @Test
+    public void testMinuteOfDay() {
+        System.out.println(new DateTime().minuteOfDay().get());
     }
 }
