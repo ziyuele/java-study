@@ -7,10 +7,7 @@ import org.joda.time.DateTime;
 import org.junit.Test;
 import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -41,5 +38,18 @@ public class Test202008 {
     @Test
     public void testMinuteOfDay() {
         System.out.println(new DateTime().minuteOfDay().get());
+    }
+
+
+    @Test
+    public void testGroupBy() {
+        HashMap<String,String> hashMap = new HashMap<>();
+        hashMap.put("klangjian", "dd");
+        hashMap.put("dfdf", "werqwer");
+        HashMap<String, String> hashMap1 = new HashMap<String, String>();
+        log.info(hashMap1.hashCode() + "");
+        hashMap1 = hashMap;
+        log.info(hashMap1.hashCode() + "");
+        log.info(hashMap.hashCode() + "");
     }
 }
