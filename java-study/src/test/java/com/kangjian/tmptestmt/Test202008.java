@@ -52,4 +52,16 @@ public class Test202008 {
         log.info(hashMap1.hashCode() + "");
         log.info(hashMap.hashCode() + "");
     }
+
+    @Test
+    public void testSort() {
+        List<String> list  = new ArrayList<>();
+        list.add("ddd");
+        list.add("a");
+        list.add("ccccc");
+        list.add("==");
+        list.sort(Comparator.comparingInt(String::length));
+        log.info(list.toString());
+        list.forEach(s -> log.info(s));
+    }
 }
