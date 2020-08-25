@@ -64,4 +64,9 @@ public class Test202008 {
         log.info(list.toString());
         list.forEach(s -> log.info(s));
     }
+
+    @Test
+    public void testDate() {
+        log.info(new DateTime().plusDays(1).toString());
+    }
 }
