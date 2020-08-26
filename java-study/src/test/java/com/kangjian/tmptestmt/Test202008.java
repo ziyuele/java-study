@@ -69,4 +69,12 @@ public class Test202008 {
     public void testDate() {
         log.info(new DateTime().plusDays(1).toString());
     }
+
+    @Test
+    public void testHex() {
+        String s = "hello,world \n";
+        for (int a = 0; a < s.length(); a++) {
+           System.out.print(Integer.toHexString(s.charAt(a) + 0));
+        }
+    }
 }
