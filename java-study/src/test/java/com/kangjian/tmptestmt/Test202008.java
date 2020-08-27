@@ -77,4 +77,14 @@ public class Test202008 {
            System.out.print(Integer.toHexString(s.charAt(a) + 0));
         }
     }
+
+    @Test
+    public void testDecrise() {
+        Map<String, String > map = new HashMap<>();
+        Map<String, String> map1 = new HashMap<>();
+        map1.put("kangjain", "aaa");
+        map = map1;
+        map.put("aaa", "kj");
+        System.out.println(map);
+    }
 }
