@@ -2,6 +2,10 @@ package com.ziyue.niuke.hw;
 
 import java.util.Scanner;
 
+/**
+ * 原题见：
+ * https://github.com/ziyuele/study/blob/master/niuke-std/src/main/java/com/ziyue/niuke/hw/HJ107.java
+ */
 public class HJ107 {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
