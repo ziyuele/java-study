@@ -7,7 +7,7 @@ package com.kangjian.leetcode;
 import java.util.Arrays;
 
 public class QuickSort {
-    public int arr[] = {1,3,43,1,3,45,1,4,23};
+    public int arr[] = {4,3};
 
     public void sort(int index, int end) {
        if (index >= end)  {
