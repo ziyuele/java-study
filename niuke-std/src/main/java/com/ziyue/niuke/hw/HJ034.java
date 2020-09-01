@@ -2,6 +2,14 @@ package com.ziyue.niuke.hw;
 
 import java.util.Scanner;
 
+/**
+ *  原题见：
+ *  https://www.nowcoder.com/practice/2de4127fda5e46858aa85d254af43941?tpId=37&&tqId=21257&rp=1&ru=/ta/huawei/&qru=/ta/huawei/question-ranking
+ *
+ *  快排参考： https://wiki.jikexueyuan.com/project/easy-learn-algorithm/fast-sort.html
+ *
+ */
+
 public class HJ034 {
     public static void main(String args[]) {
 
@@ -22,10 +30,8 @@ public class HJ034 {
             charArray = s.toCharArray();
             quickSort(0, 0, charArray.length - 1);
             for (char ss : charArray) {
-                System.out.print(ss);
                 ret.append(ss);
             }
-            System.out.println();
             return ret.toString();
         }
 
@@ -34,15 +40,17 @@ public class HJ034 {
             int left  = start;
             int right = end;
             while (left != right) {
-                while (left < right && charArray[left] <= charArray[flag]) {
-                    left++;
-                }
-                swap(left, right);
                 while (left < right && charArray[right] >= charArray[flag]) {
                     right--;
                 }
+                while (left < right && charArray[left] <= charArray[flag]) {
+                    left++;
+                }
                 swap(right, left);
             }
+            char tmp = charArray[flag];
+            charArray[flag] = charArray[left];
+            charArray[left] = tmp;
             quickSort(start, start,  left- 1);
             quickSort(left + 1, left + 1, end);
         }
