@@ -14,7 +14,7 @@ public class IntegerTest {
         Integer c = 1999;
         Integer d = 1999;
 
-        System.out.println(c == d);
+        System.out.println(c - d == 0);
         Integer e = Integer.valueOf(1);
         Integer f = Integer.valueOf(1);
         System.out.println(e.hashCode());
