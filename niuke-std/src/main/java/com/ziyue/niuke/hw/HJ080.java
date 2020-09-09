@@ -2,6 +2,12 @@ package com.ziyue.niuke.hw;
 
 import java.util.Scanner;
 
+/**
+ * 原题见：
+ * https://www.nowcoder.com/practice/c4f11ea2c886429faf91decfaf6a310b?tpId=37&&tqId=21303&rp=1&ru=/ta/huawei/&qru=/ta/huawei/question-ranking
+ *
+ * 标准的两个有序列表合并问题
+ */
 public class HJ080 {
     public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
