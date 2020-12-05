@@ -22,7 +22,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
+import lombok.val;
 import org.apache.curator.framework.CuratorFramework;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -225,9 +227,8 @@ public class Thread13Test {
     @Test
     public void sortTest() {
         List<Integer> list = new ArrayList();
-        list.add(1); list.add(10); list.add(3); list.add(3);
-        list.sort(Comparator.comparingInt(this::getNum));
-        System.out.println(list);
+        List<Integer> integers = list.stream().filter(r -> r >5).collect(Collectors.toList());
+        System.out.println(integers);
     }
 
     private int getNum(int x) {

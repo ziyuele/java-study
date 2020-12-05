@@ -1,6 +1,5 @@
 package com.kangjian.tmptestmt;
 
-import com.sankuai.security.sdk.SecSdk;
 import lombok.extern.slf4j.Slf4j;
 import org.joda.time.DateTime;
 import org.junit.Test;
@@ -19,12 +18,12 @@ public class Test202009 {
         System.out.println(dateTime.minusDays(dateTime.getDayOfMonth() - 1).toDate());
     }
 
-    @Test
-    public void testSec() {
-        String callback = "callback";
-        callback = SecSdk.encodeForHTML(callback);
-        System.out.println(callback);
-    }
+//    @Test
+//    public void testSec() {
+//        String callback = "callback";
+//        callback = SecSdk.encodeForHTML(callback);
+//        System.out.println(callback);
+//    }
 
     @Test
     public void testMapJoin() {
