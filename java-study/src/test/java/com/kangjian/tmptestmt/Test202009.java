@@ -18,6 +18,7 @@ public class Test202009 {
         System.out.println(dateTime.minusDays(dateTime.getDayOfMonth() - 1).toDate());
     }
 
+
     @Test
     public void testMapJoin() {
         Boolean b = false;
