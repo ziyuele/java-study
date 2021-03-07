@@ -4,8 +4,12 @@
 
 package com.kangjian.tmp;
 
+import com.google.errorprone.annotations.SuppressPackageLocation;
+import com.kangjian.util.Json1Bean;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+@Slf4j
 public class TTest {
 
     private DataSourceType type;
@@ -39,8 +43,14 @@ public class TTest {
         public String getPrefix() {
             return prefix;
         }
-     }
+    }
 
+    @Test
+    public void testChange() {
+        Json1Bean bean = new Json1Bean();
+        log.info(bean.toString());
+
+    }
 
 
 }

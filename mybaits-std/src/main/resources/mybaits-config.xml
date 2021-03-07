@@ -8,9 +8,6 @@
         <property name="mysqlurl" value="jdbc:mysql://localhost:3306/test"/>
         <property name="username" value="root"/>
     </properties>
-    <!--settings>
-        <setting name="hhh" value="hh"/>
-    </settings-->
     <environments default="dev">
         <environment id="dev">
             <transactionManager type="JDBC"/>

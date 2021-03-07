@@ -14,9 +14,9 @@ public class MyBaitsDataSourceTest {
 
     @Test
     public void createSession() {
-        SqlSessionFactory sqlSessionFactory = MyBaitsDataSource.CreateSessionFactory();
+        SqlSessionFactory sqlSessionFactory = MyBaitsDataSource.createSessionFactoryWithXML();
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        TestEntity test       = sqlSession.selectOne("com.ziyue.mybaits.dao.TestMapper.getAllTest");
+        TestEntity test = sqlSession.selectOne("com.ziyue.mybaits.dao.TestMapper.getAllTest");
         logger.info(test);
     }
 }

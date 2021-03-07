@@ -7,5 +7,13 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/test</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="java-study/Hibernate" uuid="44ce13b6-fa0b-41bc-ac09-ac0b5262f34e">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://140.143.132.21:8806/java_study</jdbc-url>
+    </data-source>
   </component>
 </project>
