@@ -26,6 +26,7 @@
         <module>spi-std</module>
         <module>springboot-std</module>
         <module>niuke-std</module>
+        <module>bilbli-std</module>
     </modules>
 
     <build>

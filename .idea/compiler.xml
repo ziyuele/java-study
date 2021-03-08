@@ -7,14 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spi-std" />
-        <module name="java-study" />
         <module name="springboot-std" />
-        <module name="niuke-std" />
+        <module name="spi-std" />
         <module name="mybaits-std" />
+        <module name="bilbli-std" />
+        <module name="niuke-std" />
+        <module name="java-study" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="bilbli-std" target="1.8" />
       <module name="java-study" target="1.8" />
       <module name="mybaits-std" target="1.8" />
       <module name="niuke-std" target="1.8" />
