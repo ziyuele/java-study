@@ -3,11 +3,13 @@ package com.ziyue;
 import lombok.Data;
 import org.junit.Test;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 import java.util.Stack;
 
 public class TreeTest {
 
-    @Data
     class TreeNode {
         int val;
         TreeNode left;
@@ -15,6 +17,13 @@ public class TreeTest {
 
         public TreeNode(int val) {
             this.val = val;
+        }
+
+        @Override
+        public String toString() {
+            return "TreeNode{" +
+                    "val=" + val +
+                    '}';
         }
     }
 
@@ -53,6 +62,10 @@ public class TreeTest {
         printTreeNodeE(buildTreeNode());
         System.out.println();
         printTreeNodeF(buildTreeNode());
+        System.out.println();
+        //printTreeNodeG(buildTreeNode());
+        System.out.println();
+        printTreeNodeH(buildTreeNode());
 
     }
 
@@ -157,5 +170,58 @@ public class TreeTest {
         }
     }
 
+    /**
+     *  扩展，横向遍历树， 基于列表
+     */
+    public void printTreeNodeG(TreeNode treeNode) {
+        Queue<TreeNode> treeNodeQueue = new LinkedList<>();
+        if (null != treeNode) {
+            treeNodeQueue.offer(treeNode);
+        }
+        while (!treeNodeQueue.isEmpty()) {
+           TreeNode currentNod = treeNodeQueue.poll();
+           System.out.print(currentNod.val + "\t");
+           if (null != currentNod.right) {
+               treeNodeQueue.offer(currentNod.right);
+           }
+           if (null != currentNod.left) {
+               treeNodeQueue.offer(currentNod.left);
+           }
+        }
+
+    }
+
+    /**
+     *  扩展，横向遍历树， 基于列表
+     */
+    public void printTreeNodeH(TreeNode treeNode) {
+        LinkedList<TreeNode> ltrQueue = new LinkedList<>();
+        LinkedList<TreeNode> rtlQueue = new LinkedList<>();
+        if (null != treeNode) {
+            ltrQueue.offer(treeNode);
+        }
+        while (!ltrQueue.isEmpty() || !rtlQueue.isEmpty()) {
+            while (!ltrQueue.isEmpty()) {
+                TreeNode curNode = ltrQueue.poll();
+                System.out.print(curNode.val + "\t");
+                if (curNode.right != null) {
+                    rtlQueue.addFirst(curNode.right);
+                }
+                if (curNode.left != null) {
+                    rtlQueue.addFirst(curNode.left);
+                }
+            }
+            while (!rtlQueue.isEmpty()) {
+                TreeNode curNode = rtlQueue.poll();
+                System.out.print(curNode.val + "\t");
+                if (curNode.left != null) { // 已经是返着打印了， 所以不应跌倒
+                    ltrQueue.addFirst(curNode.left);
+                }
+                if (curNode.right != null) {
+                    ltrQueue.addFirst(curNode.right);
+                }
+            }
+        }
+    }
 
 }
